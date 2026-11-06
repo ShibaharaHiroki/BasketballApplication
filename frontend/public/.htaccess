@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Basketball Application"
+AuthUserFile /wwwhome/rental/svc08345/htpasswd/.htpasswd
+Require valid-user

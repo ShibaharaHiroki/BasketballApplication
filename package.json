@@ -1,0 +1,15 @@
+{
+  "name": "basketball-application",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "postinstall": "cd backend && npm install && cd ../frontend && npm install --include=dev",
+    "data:build": "node backend/scripts/build-data.mjs",
+    "build": "npm run build --prefix frontend",
+    "build:static": "npm run data:build && npm run build",
+    "start": "npm start --prefix backend"
+  }
+}

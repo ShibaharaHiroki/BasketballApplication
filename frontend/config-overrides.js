@@ -11,6 +11,9 @@ module.exports = function override(config) {
     zlib: require.resolve('browserify-zlib'),
   };
 
+  // 集計処理は backend/core のものを画面でも使うので、src の外からの import を許可する
+  config.resolve.plugins = config.resolve.plugins.filter((plugin) => plugin.constructor.name !== 'ModuleScopePlugin');
+
   config.plugins = [
     ...config.plugins,
     new webpack.ProvidePlugin({
